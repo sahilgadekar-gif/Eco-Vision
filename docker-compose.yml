@@ -1,0 +1,28 @@
+version: '3.9'
+services:
+  backend:
+    build: ./backend
+    container_name: vasundhara-backend
+    restart: unless-stopped
+    ports: ["5000:5000"]
+    env_file: ./backend/.env
+    depends_on: [ai-service]
+    networks: [vasundhara-net]
+    volumes: [backend-logs:/app/logs]
+
+  ai-service:
+    build: ./ai-service
+    container_name: vasundhara-ai
+    restart: unless-stopped
+    ports: ["8000:8000"]
+    env_file: ./ai-service/.env
+    networks: [vasundhara-net]
+    volumes: [ai-models:/app/models]
+
+networks:
+  vasundhara-net:
+    driver: bridge
+
+volumes:
+  backend-logs:
+  ai-models:

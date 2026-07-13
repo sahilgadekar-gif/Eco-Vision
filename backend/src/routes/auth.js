@@ -1,0 +1,10 @@
+const express = require('express');
+const { body } = require('express-validator');
+const { register, login, googleAuth, refreshToken } = require('../controllers/authController');
+const validate = require('../middleware/validate');
+const router = express.Router();
+router.post('/register', [body('name').trim().isLength({ min: 2 }), body('email').isEmail().normalizeEmail(), body('password').isLength({ min: 8 })], validate, register);
+router.post('/login', [body('email').isEmail().normalizeEmail(), body('password').notEmpty()], validate, login);
+router.post('/google', [body('idToken').notEmpty()], validate, googleAuth);
+router.post('/refresh', [body('refreshToken').notEmpty()], validate, refreshToken);
+module.exports = router;

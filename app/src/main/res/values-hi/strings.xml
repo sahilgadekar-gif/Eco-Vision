@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">वसुंधरा</string>
+    <string name="dashboard">होम</string>
+    <string name="waste_detection">कचरा पहचान</string>
+    <string name="carbon_tracker">कार्बन ट्रैकर</string>
+    <string name="ai_chat">AI सहायक</string>
+    <string name="profile">प्रोफ़ाइल</string>
+    <string name="eco_score">इको स्कोर</string>
+    <string name="co2_saved">CO₂ बचाया</string>
+    <string name="streak">स्ट्रीक</string>
+    <string name="rhi">नदी स्वास्थ्य सूचकांक</string>
+    <string name="challenges">दैनिक चुनौतियाँ</string>
+    <string name="leaderboard">लीडरबोर्ड</string>
+    <string name="settings">सेटिंग्स</string>
+    <string name="login">लॉगिन</string>
+    <string name="register">रजिस्टर</string>
+    <string name="eco_map">इको मैप</string>
+</resources>

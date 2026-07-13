@@ -1,0 +1,10 @@
+const express = require('express');
+const { body } = require('express-validator');
+const { calculateRhi, getLatestRhi } = require('../controllers/rhiController');
+const { protect } = require('../middleware/auth');
+const validate = require('../middleware/validate');
+const router = express.Router();
+router.use(protect);
+router.post('/calculate', [body('waterPollution').isFloat({ min: 0, max: 100 }), body('wasteDumped').isFloat({ min: 0, max: 100 }), body('industrialImpact').isFloat({ min: 0, max: 100 }), body('carbonInRiver').isFloat({ min: 0, max: 100 })], validate, calculateRhi);
+router.get('/latest', getLatestRhi);
+module.exports = router;
