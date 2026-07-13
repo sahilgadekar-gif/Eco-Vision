@@ -1,4 +1,4 @@
-# Vasundhara: AI-Powered Environmental Monitoring & Carbon Tracking Platform
+# Eco Vision: AI-Powered Environmental Monitoring & Carbon Tracking Platform
 
 
 
